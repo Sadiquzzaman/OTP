@@ -1,0 +1,27 @@
+<div class="content">
+    <div>
+      <div>
+        <div fxLayout="column" fxLayoutAlign="center center" >
+            <h2 class="aoi">Please Enter The OTP to Verify Your Account</h2>
+            <p>
+              <i>A OTP (One Time Password) has been sent to 01*********</i>
+            </p>
+            <form>
+                <input *ngFor="let each of [1,2,3,4,5]; index as i" placeholder="x" type="text" #focus (input)="watch(i)"
+                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" maxlength="1">
+            </form>
+            <br>
+            <div class="button">
+                <mat-button-toggle-group>  
+                    <mat-button-toggle (click)="submit()">SUBMIT</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+            <div class="re-send">
+                <mat-icon>
+                    <button mat-button>Re-send OTP</button>
+                </mat-icon>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
